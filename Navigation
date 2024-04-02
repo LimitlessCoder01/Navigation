@@ -1,0 +1,46 @@
+package org.ink;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Navigation {
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		
+//		driver.get("https://www.google.com");
+		
+		driver.navigate().to("https://www.google.com");
+		
+		WebElement searchbar = driver.findElement(By.name("q"));
+		
+		searchbar.sendKeys("Selenium Autmation",Keys.ENTER);
+		
+//		ENUM - Enumerators ( It is used to store the constant value ) 
+		
+//		Arrowup,arrowdown, etc..
+		
+		Thread.sleep(3000);
+//		To move back from the present website
+		driver.navigate().back(); 
+		
+		Thread.sleep(3000);
+		
+//		To move forward or next to the present
+		driver.navigate().forward();
+		
+		Thread.sleep(3000);
+//		To Refresh the website
+		driver.navigate().refresh();
+		
+		Thread.sleep(3000);
+		
+		driver.close();
+		
+		
+	}
+}
